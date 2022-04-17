@@ -1,13 +1,11 @@
-import java.sql.Statement;
-
 public class StartApp {
     public static void main(String[] args){
-        Account account = new Account(new Statement());
+        Account account = new Account();
 
-        account.deposit(amountOf(1000), date("10/01/2021"));
-        account.deposit(amountOf(2000), date("13/01/2021"));
-        account.withdraw(amountOf(500), date("14/01/2021"));
+        account.deposit(100, "10/01/2021");
+        account.deposit(2000, "13/01/2021");
+        account.withdraw(500, "14/01/2021");
 
-        accont.printStament(System.out);
+        account.printStatements();
     }
 }

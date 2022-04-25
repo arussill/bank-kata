@@ -3,7 +3,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 
 public class Account {
-//    private String addressee;
+    //    private String addressee;
     private Integer balance;
     private HashMap<LocalDate, Integer> mapDeposit = new HashMap<>();
     private HashMap<LocalDate, Integer> mapWithdraw = new HashMap<>();
@@ -16,7 +16,7 @@ public class Account {
         mapStatus.put(day, balance);
     }
 
-    void withdraw(Integer amount, String date){
+    void withdraw(Integer amount, String date) {
         LocalDate day = formatterDate(date);
         balance -= amount;
         mapWithdraw.put(day, amount);
@@ -29,11 +29,11 @@ public class Account {
     }
 
     void printStatements() {
-        mapStatus.forEach((k,v) -> {
-            if(mapDeposit.containsKey(k)){
-                System.out.println("Fecha: " + k + "| Debito: " + mapDeposit.getOrDefault(k,0) + "| Balance " + v );
-            }else{
-                System.out.println("Fecha: " + k + "| Credito: " + mapWithdraw.getOrDefault(k,0) + "| Balance " + v );
+        mapStatus.forEach((k, v) -> {
+            if (mapDeposit.containsKey(k)) {
+                System.out.println("Fecha: " + k + "| Debito: " + mapDeposit.getOrDefault(k, 0) + "| Balance " + v);
+            } else {
+                System.out.println("Fecha: " + k + "| Credito: " + mapWithdraw.getOrDefault(k, 0) + "| Balance " + v);
             }
         });
 

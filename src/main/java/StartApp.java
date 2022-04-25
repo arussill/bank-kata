@@ -1,5 +1,5 @@
 public class StartApp {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Account account = new Account();
 
         account.deposit(1_000, "10/01/2021");
